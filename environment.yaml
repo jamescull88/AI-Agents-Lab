@@ -1,0 +1,11 @@
+name: tech-connect-agentic-lab
+channels:
+  - conda-forge
+  - defaults
+  - jupyter
+dependencies:
+  - python=3.10
+  - pip
+  - ipykernel
+  - pip:
+    - -r requirements.txt

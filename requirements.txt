@@ -10,3 +10,4 @@ autogen-agentchat==0.4.1
 autogen-core==0.4.1
 autogen-ext==0.4.1
 tiktoken==0.8.0
+semantic_kernel==1.18.2
