@@ -29,7 +29,7 @@ In order to authenticate and execute the notebooks follow the steps below.
 2. **Log In to Azure**:
    - Run the following command to log in to your Azure account:
 
-     ```
+     ```console
      az login
      ```
 
@@ -42,11 +42,42 @@ In order to authenticate and execute the notebooks follow the steps below.
 
 ===
 
+# Azure AI Foundry Provisioning
+
+🔴 **This step should be executed only if the instructors told you to do, because there is know bug that might affect the automatic provisioning process.** 🔴
+
+Open **Windows Terminal** and navigate to folder **C:\Users\LabUser\Lab Files\Azure**.
+
+If you don't have this folder, clone the repository with the following command:
+
+```console
+git clone --single-branch --depth 1 "https://github.com/gxjorge/AI-Agents-Lab.git" "C:\Users\LabUser\Lab Files"
+```
+
+Execute the command below to provision the required Azure AI Foundry resources. The process takes around 10-15 minutes.
+
+```console
+az deployment group create --resource-group agents-lab --template-file main.bicep --only-show-errors
+```
+
+You should see no error, but if there is any error, then delete the resources and try again.
+
+
+===
+
 # Open Notebooks
 
 👉 All notebooks are located in the **C:\Users\LabUser\Lab Files** directory.
 
-Open this directory in **Visual Studio Code**, and select the notebook **lab00-intro+setup.ipynb**.
+Before anything let's make sure we have the latest version of the notebooks. Execute the commands below on **Windows Terminal**. 
+
+```console
+git config --global --add safe.directory 'C:/Users/LabUser/Lab Files'
+cd "C:\Users\LabUser\Lab Files"
+git pull
+```
+
+Now open this directory in **Visual Studio Code**, and select the notebook **lab00-intro+setup.ipynb**.
 
 You need to select a **Python kernel** to execute the notebooks. There is already Python installed, with all the required libraries installed.
 Select this kernel, before executing any code.
